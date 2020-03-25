@@ -10,9 +10,6 @@ const io = require('socket.io')(http);
 var history = require('connect-history-api-fallback');
 
 app.use(history({
-    rewrites: [
-        { from: /\*/, to: '/index.html'}
-      ],
       disableDotRule: true,
       verbose: true
   }));
