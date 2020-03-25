@@ -11,7 +11,8 @@ var history = require('connect-history-api-fallback');
 
 app.use(history({
       disableDotRule: true,
-      verbose: true
+      verbose: true,
+      htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']
   }));
 
 app.use(express.static('public'))
