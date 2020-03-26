@@ -1,5 +1,6 @@
 
 const dbService = require('../../services/db.service')
+const boardService = require('../board/board.service')
 const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
 }
 
 async function query(filterBy = {}) {
-    const criteria = _buildCriteria(filterBy)
+    // const criteria = _buildCriteria(filterBy)
     const collection = await dbService.getCollection('user')
     try {
         const users = await collection.find(criteria).toArray();
@@ -72,6 +73,15 @@ async function update(user) {
 }
 
 async function add(user) {
+    user.isGuest = (user.email === 'gus@guest.com')
+    const publicBoard = await boardService.getById('5e7a6b94152ac30558217046')
+    user.boards = [{
+        _id: publicBoard._id,
+        name: publicBoard.name,
+        style: publicBoard.style
+    }]
+    user.imgUrl = null
+
     const collection = await dbService.getCollection('user')
     try {
         await collection.insertOne(user);
@@ -82,15 +92,5 @@ async function add(user) {
     }
 }
 
-function _buildCriteria(filterBy) {
-    const criteria = {};
-    if (filterBy.txt) {
-        criteria.username = filterBy.txt
-    }
-    if (filterBy.minBalance) {
-        criteria.balance = { $gte: +filterBy.minBalance }
-    }
-    return criteria;
-}
 
 
