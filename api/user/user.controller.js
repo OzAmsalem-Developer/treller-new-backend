@@ -6,8 +6,9 @@ async function getUser(req, res) {
 }
   
 async function getUsers(req, res) {
-    console.log(req.query);
-    const users = await userService.query(req.query)
+    const searchStr = req.query.data
+    
+    const users = await userService.query(searchStr)
     res.send(users)
 }
 

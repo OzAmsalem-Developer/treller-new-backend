@@ -19,9 +19,9 @@ async function getBoard(req, res) {
 }
   
 async function getBoards(req, res) {
-    // const critaria = JSON.parse(req.query.data)
-    
-    const boards = await boardService.query()
+    const userId = req.query.data
+
+    const boards = await boardService.query(userId)
     try {
         res.json(boards)
     }

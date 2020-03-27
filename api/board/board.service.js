@@ -11,13 +11,9 @@ module.exports = {
 }
 
 async function query() {
-    // Add criteria to: query(criteria)
-    // const filterBy = _makeFilterBy(criteria.filterBy)
-    // var sortBy = _makeSortBy(criteria.sortBy)
     const collection = await dbService.getCollection('board')
   
     try {
-        // const boards = await collection.find(filterBy).sort(sortBy).toArray();
         const boards = await collection.find().toArray();
         return boards
     } catch (err) {

@@ -2,6 +2,7 @@
 const dbService = require('../../services/db.service')
 const boardService = require('../board/board.service')
 const ObjectId = require('mongodb').ObjectId
+const utilService = require('../../services/util.service') 
 
 module.exports = {
     query,
@@ -12,11 +13,15 @@ module.exports = {
     add
 }
 
-async function query(filterBy = {}) {
-    // const criteria = _buildCriteria(filterBy)
+async function query(searchStr) {
     const collection = await dbService.getCollection('user')
+    const reg = new RegExp(searchStr, 'i')
+    const searchFilter = {
+        username: {$regex: reg},
+        email: {$regex: reg}
+    }
     try {
-        const users = await collection.find(criteria).toArray();
+        const users = await collection.find(searchFilter).toArray();
         users.forEach(user => delete user.password);
 
         return users
@@ -81,6 +86,7 @@ async function add(user) {
         style: publicBoard.style
     }]
     user.imgUrl = null
+    user.avatarColor = utilService.getRandomColor()
 
     const collection = await dbService.getCollection('user')
     try {
