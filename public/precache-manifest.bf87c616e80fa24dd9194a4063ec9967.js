@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "91107814aca33231c5dc",
-    "url": "/css/app.423d3967.css"
+    "revision": "47641b1a168861e632fe",
+    "url": "/css/app.4e510cb4.css"
   },
   {
     "revision": "7337bd70409d5294ad49",
@@ -136,16 +136,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/remove-btn.81ab16f0.webp"
   },
   {
-    "revision": "deee2e786ecad7a57d05a042d77b03b5",
-    "url": "/img/tasky.deee2e78.png"
+    "revision": "9bc32ff30a79db040dce569221c31454",
+    "url": "/img/tasky-blue.9bc32ff3.png"
   },
   {
-    "revision": "dc1b6e155fcc5647e6a1c8e5e077bcb1",
+    "revision": "f37fea7e9f026e7fd08490515d2e9d20",
+    "url": "/img/tasky.f37fea7e.png"
+  },
+  {
+    "revision": "753a402b6b024663f03f31a03e9a665a",
     "url": "/index.html"
   },
   {
-    "revision": "91107814aca33231c5dc",
-    "url": "/js/app.4bb0069e.js"
+    "revision": "47641b1a168861e632fe",
+    "url": "/js/app.5451e97c.js"
   },
   {
     "revision": "7337bd70409d5294ad49",
