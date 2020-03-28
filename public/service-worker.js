@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f76f345baee39d5027a763460fe79be5.js"
+  "/precache-manifest.c6b354b4748366b1aa2497b8927e8bc6.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "treller"});
