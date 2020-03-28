@@ -79,7 +79,7 @@ async function update(user) {
 
 async function add(user) {
     user.isGuest = (user.email === 'gus@guest.com')
-    const publicBoard = await boardService.getById('5e7e52759d52254fd8f0992c')
+    const publicBoard = await boardService.getById('5e7f569207836732d8037f5a')
     user.boards = [{
         _id: publicBoard._id,
         name: publicBoard.name,

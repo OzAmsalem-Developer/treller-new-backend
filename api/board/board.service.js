@@ -69,29 +69,3 @@ async function add(board) {
         throw err;
     }
 }
-
-// function _makeFilterBy(oldFilter) {
-//     const reg = new RegExp(oldFilter.txt, 'i')
-//     const searchFilter = {
-//         name: reg
-//     }
-//     if (oldFilter.type && oldFilter.type !== 'All') {
-//         searchFilter.type = { $eq: oldFilter.type }
-//     }
-//     if (oldFilter.inStock) searchFilter.inStock = { $eq: oldFilter.inStock }
-
-//     return searchFilter
-// }
-
-// function _makeSortBy(oldSort) {
-//     const sortBy = {}
-
-//     if (!oldSort) {
-//         sortBy._id = -1
-//         return sortBy
-//     } else if (oldSort === 'name') {
-//         sortBy.name = 1
-//     } else sortBy.price = 1
-
-//     return sortBy
-// }
